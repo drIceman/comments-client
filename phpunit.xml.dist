@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.1/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         executionOrder="depends,defects"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         verbose="true">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+            <exclude>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./coverage/html"/>
+        <log type="coverage-xml" target="./coverage/xml"/>
+        <log type="coverage-clover" target="./coverage/clover.xml"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+    </logging>
+</phpunit>
