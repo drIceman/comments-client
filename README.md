@@ -15,7 +15,11 @@
 
 Установить пакет
 
-`composer require drIceman/comments-client:dev-master`
+`composer require example/comments-client:dev-master`
+
+Если требуется, подключить файл автолоада
+
+`require __DIR__ . '/vendor/autoload.php';`
 
 После чего его можно использовать через
 
